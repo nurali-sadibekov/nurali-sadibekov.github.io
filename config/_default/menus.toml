@@ -1,0 +1,37 @@
+[[main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+[[main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/posts/"
+    weight = 2
+
+[[main]]
+    identifier = "books"
+    name = "Books"
+    url = "/books/"
+    weight = 3
+    
+# Social Media Configuration
+
+[[social]]
+    identifier = "twitter"
+    name = "Twitter"
+    url = "#"
+    weight = 1
+
+[[social]]
+    identifier = "instagram"
+    name = "Instagram"
+    url = "#"
+    weight = 2
+
+[[social]]
+    identifier = "github"
+    name = "GitHub"
+    url = "#"
+    weight = 3
