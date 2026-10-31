@@ -1,6 +1,7 @@
-<nav>
-  <ul style="justify-content: flex-start">
-    {{ $currentPage := . }}
+{{ $currentPage := .page | default . }}
+{{ $mobile := .mobile | default false }}
+<nav aria-label="Main navigation">
+  <ul {{ if $mobile }}style="justify-content: flex-start; flex-direction: column; align-items: flex-start; gap: .75rem"{{ else }}style="justify-content: flex-start"{{ end }}>
     {{ range site.Menus.main }}
     {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
     {{- $page_url := $currentPage.Permalink | absLangURL }}
