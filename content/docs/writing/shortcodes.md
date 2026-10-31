@@ -76,7 +76,7 @@ The image gets its real width and height, so the page does not jump while it loa
 img shortcode: "dog.jpg" not found in page bundle. "content/posts/my-trip/index.md:12:1"
 ```
 
-See it in action in the [Markdown Cheat Sheet]({{< relref "/posts/markdown-cheat-sheet#images" >}}).
+See the image examples in the [Markdown & code guide]({{< relref "/docs/writing/markdown#images" >}}).
 
 ## Task list
 

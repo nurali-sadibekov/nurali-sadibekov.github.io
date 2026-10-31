@@ -5,7 +5,7 @@ weight: 2
 tableOfContents: true
 ---
 
-Lowkey styles everything Hugo's Markdown renderer produces. The [Markdown Cheat Sheet]({{< relref "/posts/markdown-cheat-sheet" >}}) post shows each element in a real post; this page explains the features that need a little setup.
+Lowkey styles everything Hugo's Markdown renderer produces. This guide demonstrates Markdown elements and explains the features that need a little setup.
 
 ## Code blocks
 

@@ -1,0 +1,57 @@
+{{ define "main" }}
+
+{{ if .IsHome }}
+  <figure style="margin: 0 0 1.5rem;">
+    <img
+      src="/img/v838-mon-cover.jpg"
+      alt="V838 Monocerotis surrounded by a light echo nebula and distant stars."
+      fetchpriority="high"
+      style="display: block; width: 100%; height: clamp(12rem, 32vw, 18rem); object-fit: cover; object-position: center; border-radius: 1rem;"
+    />
+    <figcaption style="margin-top: 0.5rem; font-size: 0.75rem; color: #6b7280;">
+      V838 Monocerotis, NASA Astronomy Picture of the Day, December 5, 2003. Image: Arne Henden; processed by Al Kelly.
+      <a href="https://apod.nasa.gov/apod/ap031205.html">Image source</a>
+    </figcaption>
+  </figure>
+{{ end }}
+
+<div class="py-2 flex flex-col gap-1">
+  <h3 class="title-small">{{ .Title }}</h3>
+</div>
+
+<section>{{ .Content }}</section>
+
+{{ if not site.Params.isSinglePage }}
+  {{ $paginator := false }}
+  {{ if site.Params.homePagination }}
+    {{ $paginator = .Paginate (where site.RegularPages "Section" "posts") }}
+  {{ else }}
+    {{ with site.GetPage "/posts" }}{{ $paginator = .Paginator }}{{ end }}
+  {{ end }}
+
+  {{ with $paginator }}
+    <section class="pt-5 flex flex-col gap-10">
+      <h3 class="title-small mb-0">{{ i18n "latestPosts" }}</h3>
+      {{ range .Pages }}
+        {{ partial "list/default" . }}
+      {{ end }}
+    </section>
+
+    {{ if site.Params.homePagination }}
+      {{ if gt .TotalPages 1 }}
+        {{ partial "list/pagination" $ }}
+      {{ end }}
+    {{ else }}
+      {{ with .Next }}
+        <div class="py-10 flex justify-end font-semibold">
+          <a href="{{ .URL }}" class="pagination-button">
+            {{ i18n "olderPosts" }}
+            <span class="h-4 w-4 stroke-2"> {{ partial "utils/icon" "arrow-right" }} </span>
+          </a>
+        </div>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ end }}

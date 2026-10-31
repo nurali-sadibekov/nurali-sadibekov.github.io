@@ -6,6 +6,7 @@ theme = 'lowkey'
 title = 'Nurali Sadibekov'
 enableRobotsTXT = true
 summaryLength = 15
+ignoreFiles = ['[/\\]posts[/\\]temp[/\\]']
 
 [pagination]
   pagerSize = 5
