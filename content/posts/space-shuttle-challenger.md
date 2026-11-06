@@ -1,6 +1,6 @@
 ---
 title: "Space Shuttle Challenger: Day 1"
-date: 2026-11-06T09:00:00
+date: 2026-11-06T09:00:00+07:00
 draft: false
 description: ""
 tableOfContents: false
